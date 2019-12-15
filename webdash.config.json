@@ -1,0 +1,22 @@
+{
+    "commands": [
+        {
+            "name": "install",
+            "action": "bash install.sh"
+        },
+        {
+            "name": "build",
+            "action": "make -C build"
+        },
+        {
+            "name": "clean",
+            "action": "rm build/report-build-state"
+        },
+        {
+            "name": "all",
+            "actions": [
+                "#clean", "#build", "#install"
+            ]
+        }
+    ]
+}
