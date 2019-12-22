@@ -91,6 +91,8 @@ void GetBuildState(const string cmd, const string configpath) {
         cout << "Error line exists:" << endl;
         cout << errline << endl;
         cout << endl;
+
+        WebDashCore::Get().Notify("Error in executing " + configpath + ":" + cmd);
     } else {
         cout << "No errors" << endl;
     }
