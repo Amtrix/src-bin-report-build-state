@@ -10,6 +10,7 @@ include_directories(${Boost_INCLUDE_DIR})
 include_directories(${EXTERNAL_LIB_PATH}/json/include)
 include_directories(${EXTERNAL_LIB_PATH}/websocketpp)
 include_directories($ENV{MYWORLD}/src/common)
+include_directories($ENV{MYWORLD}/src/bin)
 include_directories($ENV{MYWORLD}/src/lib/webdash-executer/include)
 
 
