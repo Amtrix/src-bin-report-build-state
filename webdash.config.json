@@ -28,6 +28,13 @@
                 ":clean", ":build", ":install"
             ],
             "wdir": "$.thisDir()"
+        },
+        {
+            "name": "report-build-state",
+            "actions": [
+                ":clean", ":build"
+            ],
+            "wdir": "$.thisDir()"
         }
     ]
 }
