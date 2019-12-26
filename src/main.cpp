@@ -86,9 +86,10 @@ void GetBuildState(int argc, char **argv) {
         return;
     }
 
+    // Break output according to '\n'
     vector<string> output = doSegment(ret[0].output.c_str());
 
-    // To intentionally cause error:
+    // Parse output and check for error line.
     string errline = "";
     for (size_t i = 0; i < output.size(); ++i) {
         string line = output[i];

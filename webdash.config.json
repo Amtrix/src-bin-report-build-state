@@ -1,8 +1,8 @@
 {
     "commands": [
         {
-            "name": "install",
-            "action": "bash install.sh",
+            "name": "clean",
+            "action": "rm build/report-build-state",
             "wdir": "$.thisDir()"
         },
         {
@@ -18,8 +18,8 @@
             "wdir": "$.thisDir()"
         },
         {
-            "name": "clean",
-            "action": "rm build/report-build-state",
+            "name": "install",
+            "action": "bash install.sh",
             "wdir": "$.thisDir()"
         },
         {
