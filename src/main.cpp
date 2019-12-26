@@ -23,28 +23,27 @@ using json = nlohmann::json;
 
 const string _WEBDASH_PROJECT_NAME_ = "report-build-state";
 
-// trim from start (in place)
+// trim from start
 static inline void ltrim(std::string &s) {
     s.erase(s.begin(), std::find_if(s.begin(), s.end(), [](int ch) {
         return !std::isspace(ch);
     }));
 }
 
-// trim from end (in place)
+// trim from end
 static inline void rtrim(std::string &s) {
     s.erase(std::find_if(s.rbegin(), s.rend(), [](int ch) {
         return !std::isspace(ch);
     }).base(), s.end());
 }
 
-// trim from both ends (in place)
+// trim from both ends
 static inline void trim(std::string &s) {
     ltrim(s);
     rtrim(s);
 }
 
-vector<string> doSegment(const char *sentence)
-{
+vector<string> breakOnNewLine(const char *sentence) {
     std::stringstream ss(sentence);
     std::string to;
 
@@ -87,7 +86,7 @@ void GetBuildState(int argc, char **argv) {
     }
 
     // Break output according to '\n'
-    vector<string> output = doSegment(ret[0].output.c_str());
+    vector<string> output = breakOnNewLine(ret[0].output.c_str());
 
     // Parse output and check for error line.
     string errline = "";
