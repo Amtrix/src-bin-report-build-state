@@ -1,23 +1,14 @@
-<h1>WebDash plugin: Report Repo State</h2>
-Reports if the directory contains changes from git's perspective.
-<h2>Example (webdash.config.json):</h2>
+<h1>WebDash plugin: Report Build State</h2>
+Checks if a command's output contains error information.
+<h2>Example:</h2>
 <pre><code>{
-    "commands": [
-        {
-            "name": "git-status",
-            "actions": [
-                "git status"
-            ]
-        },
-        {
-            "name": "report-repo-state",
-            "actions": [
-                "report-repo-state git-status"
-            ],
-            "frequency": "daily",
-            "when": "new-day",
-            "notify-dashboard": true,
-            "wdir": "$.thisDir()"
-        }
-    ]
-}</code></pre>
+      "name": "report-build-state",
+      "actions": [
+          "report-build-state clean",
+          "report-build-state setup-project",
+          "report-build-state build-server",
+          "report-build-state build-client"
+      ],
+      "frequency": "daily",
+      "wdir": "$.thisDir()"
+  }</code></pre>
