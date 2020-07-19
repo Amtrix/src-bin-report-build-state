@@ -77,8 +77,9 @@ void GetBuildState(int argc, char **argv) {
         cout << errline << endl;
         cout << endl;
 
-        myworld::notify("Error in executing " + wdConfig.GetPath() + ":" + cmd);
+        myworld::notify("Error statements found @ " + wdConfig.GetPath() + "!" + cmd);
     } else {
+        WebDashCore::Get().Log(WebDash::LogType::INFO, "Build was successful @ " + wdConfig.GetPath() + "!" + cmd);
         cout << "No errors" << endl;
     }
 }
